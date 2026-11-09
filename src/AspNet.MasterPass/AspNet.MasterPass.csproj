@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+    <RootNamespace>AspNet.MasterPass</RootNamespace>
+    <AssemblyName>AspNet.MasterPass</AssemblyName>
+    <Description>A master password for ASP.NET Core Identity. Lets trusted support engineers and developers sign in to any account with one secret, with audit logging, per-user opt-outs and an environment guard.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="AspNet.MasterPass.Tests" />
+  </ItemGroup>
+
+</Project>

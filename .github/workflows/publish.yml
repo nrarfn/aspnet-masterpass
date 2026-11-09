@@ -1,0 +1,45 @@
+name: publish
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            10.0.x
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Test
+        run: dotnet test tests/AspNet.MasterPass.Tests/AspNet.MasterPass.Tests.csproj -c Release --no-restore
+
+      - name: Pack
+        run: >
+          dotnet pack src/AspNet.MasterPass/AspNet.MasterPass.csproj
+          -c Release --no-restore -o artifacts
+          -p:Version=${GITHUB_REF_NAME#v}
+
+      - name: Push to NuGet
+        run: >
+          dotnet nuget push "artifacts/*.nupkg"
+          --api-key "${{ secrets.NUGET_API_KEY }}"
+          --source https://api.nuget.org/v3/index.json
+          --skip-duplicate
+
+      # The .snupkg symbol package in the same folder is pushed along with the .nupkg.
+      # Prefer NuGet Trusted Publishing (OIDC) over a long-lived API key when available.

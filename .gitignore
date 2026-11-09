@@ -1,0 +1,30 @@
+# Build output
+bin/
+obj/
+artifacts/
+*.user
+*.suo
+
+# Test results
+TestResults/
+*.trx
+coverage*.xml
+coverage*.json
+
+# Rider / Visual Studio
+.idea/
+.vs/
+*.DotSettings.user
+
+# Local sample data
+*.db
+*.db-shm
+*.db-wal
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Local secrets
+appsettings.Local.json
+.env
