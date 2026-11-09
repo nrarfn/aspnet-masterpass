@@ -211,8 +211,9 @@ dotnet test tests/AspNet.MasterPass.Tests -c Release
 dotnet pack src/AspNet.MasterPass -c Release -o artifacts
 ```
 
-Tag a release with `git tag v0.1.0 && git push origin v0.1.0`; the publish workflow pushes the
-package to nuget.org using the `NUGET_API_KEY` repository secret.
+Tag a release with `git tag v0.1.0 && git push origin v0.1.0`. The publish workflow authenticates to
+nuget.org with Trusted Publishing (GitHub OIDC), using the `NUGET_USER` repository secret that holds
+the nuget.org username.
 
 ## License
 
