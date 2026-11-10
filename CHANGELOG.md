@@ -6,6 +6,18 @@ All notable changes to this package are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-11-10
+
+### Changed
+
+- Packaging metadata (readme, icon, package validation) moved from the repository-wide
+  `Directory.Build.props` to the library project, and `PackageId` is set explicitly.
+- `IsPackable` is now `false` by default for every project, so only the library can be packed.
+
+### Documentation
+
+- Added Indonesian (`README.id.md`) and Simplified Chinese (`README.zh-CN.md`) translations.
+
 ## [0.1.0] - 2026-11-09
 
 ### Added

@@ -4,6 +4,11 @@
     <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
     <RootNamespace>AspNet.MasterPass</RootNamespace>
     <AssemblyName>AspNet.MasterPass</AssemblyName>
+    <IsPackable>true</IsPackable>
+    <PackageId>AspNet.MasterPass</PackageId>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <EnablePackageValidation>true</EnablePackageValidation>
     <Description>A master password for ASP.NET Core Identity. Lets trusted support engineers and developers sign in to any account with one secret, with audit logging, per-user opt-outs and an environment guard.</Description>
   </PropertyGroup>
 
@@ -13,6 +18,11 @@
 
   <ItemGroup>
     <InternalsVisibleTo Include="AspNet.MasterPass.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)../../README.md" Pack="true" PackagePath="\" Visible="false" />
+    <None Include="$(MSBuildThisFileDirectory)../../icon.png" Pack="true" PackagePath="\" Visible="false" />
   </ItemGroup>
 
 </Project>

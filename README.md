@@ -1,5 +1,9 @@
 # AspNet.MasterPass
 
+[English](https://github.com/nrarfn/aspnet-masterpass/blob/main/README.md) ·
+[Bahasa Indonesia](https://github.com/nrarfn/aspnet-masterpass/blob/main/README.id.md) ·
+[中文](https://github.com/nrarfn/aspnet-masterpass/blob/main/README.zh-CN.md)
+
 [![NuGet](https://img.shields.io/nuget/v/AspNet.MasterPass.svg)](https://www.nuget.org/packages/AspNet.MasterPass)
 [![NuGet downloads](https://img.shields.io/nuget/dt/AspNet.MasterPass.svg)](https://www.nuget.org/packages/AspNet.MasterPass)
 [![ci](https://github.com/nrarfn/aspnet-masterpass/actions/workflows/ci.yml/badge.svg)](https://github.com/nrarfn/aspnet-masterpass/actions/workflows/ci.yml)
@@ -211,7 +215,7 @@ dotnet test tests/AspNet.MasterPass.Tests -c Release
 dotnet pack src/AspNet.MasterPass -c Release -o artifacts
 ```
 
-Tag a release with `git tag v0.1.0 && git push origin v0.1.0`. The publish workflow authenticates to
+Tag a release with `git tag v0.1.1 && git push origin v0.1.1`. The publish workflow authenticates to
 nuget.org with Trusted Publishing (GitHub OIDC), using the `NUGET_USER` repository secret that holds
 the nuget.org username.
 
